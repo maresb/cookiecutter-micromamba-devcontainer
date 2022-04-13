@@ -32,6 +32,7 @@
 		"github.copilot",
 		"davidanson.vscode-markdownlint",
 		"exiasr.hadolint",
+		"jnoortheen.xonsh",
 	],
 	"remoteUser": "mambauser",
 	"settings": {
