@@ -86,8 +86,10 @@
 		// Use isort for imports
 		"python.sortImports.path": "/opt/conda/bin/isort",
 		"python.sortImports.args": [
-			"--profile=black"
-		],
+			"--profile=black",
+			"--src",
+			"${workspaceFolder}"
+		], // <https://github.com/microsoft/vscode-python/issues/14254#issuecomment-708151872>
 
 		// Interpret lines beginning with "# !%" as ipython magic commands
 		"jupyter.magicCommandsAsComments": true,
