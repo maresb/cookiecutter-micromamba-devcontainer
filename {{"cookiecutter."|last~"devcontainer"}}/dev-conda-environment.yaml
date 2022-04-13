@@ -19,6 +19,8 @@ dependencies:
   - pytest
   - pytest-asyncio
   - mamba
+  - pipx
+  - condax
   - conda-lock
   - ipykernel
   - line_profiler
