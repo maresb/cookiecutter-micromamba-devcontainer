@@ -9,6 +9,8 @@ channels:
 
 dependencies:
   - python ={{cookiecutter.python_version}}
+  - git  # Also installed from Ubuntu, but this is newer.
+  - xonsh
   - poetry >=1.2.0a2
   - pre-commit
   - black
