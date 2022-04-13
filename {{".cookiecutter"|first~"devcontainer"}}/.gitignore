@@ -1,0 +1,6 @@
+# Ignore the cache folders, but keep empty .gitignore files
+# so that Git will the directories.
+/cache/pre-commit/*
+!/cache/pre-commit/.gitignore
+/cache/vscode-server-extensions/*
+!/cache/vscode-server-extensions/.gitignore

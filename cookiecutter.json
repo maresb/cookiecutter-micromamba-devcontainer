@@ -1,0 +1,5 @@
+{
+    "project_name": "the name from pyproject.toml",
+    "python_version": "3.10",
+    "timezone": "Europe/Berlin"
+}
