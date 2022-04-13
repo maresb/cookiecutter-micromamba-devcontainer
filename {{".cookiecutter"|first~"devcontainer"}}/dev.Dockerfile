@@ -16,6 +16,9 @@ RUN : \
     && micromamba clean --all --yes \
     ;
 
+# Configure Conda to use the conda-forge channel.
+RUN micromamba config append channels conda-forge
+
 # Activate the conda environment for the Dockerfile.
 # <https://github.com/mamba-org/micromamba-docker#running-commands-in-dockerfile-within-the-conda-environment>
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
