@@ -2,6 +2,8 @@
 	"name": "{{cookiecutter.project_name}}",
 	"containerEnv": {
 		"TZ": "{{cookiecutter.timezone}}",
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+		"CONTAINER_WORKSPACE_FOLDER": "${containerWorkspaceFolder}",
 	},
 	"runArgs": [
 		"--hostname", "devcontainer",
