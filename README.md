@@ -21,10 +21,10 @@ cruft create https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer
 
 Then fill in the following variables:
 
-* `package_name`: The name of the package in your Python project
+* `package_name`: The name of the package in your Python project, as specified as `name` in the `pyproject.toml`.
 * `python_version`: The Python version to install
 * `timezone`: The timezone to use
-* `packages_dir`: Leave this as `./` for project root, or set it to `src/`, `pypackages/`, or whatever is the relative path to the directory that should contain the `package_name` package.)
+* `packages_dir`: Leave this as `.` for project root, or set it to `src/`, `pypackages/`, or whatever is the relative path to the directory that should contain the `package_name` package.)
 
 To update to a new revision, run
 
