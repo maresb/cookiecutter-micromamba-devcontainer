@@ -24,7 +24,7 @@ Then fill in the following variables:
 * `project_name`: The name of the package in your Python project
 * `python_version`: The Python version to install
 * `timezone`: The timezone to use
-* `source_dir`: Leave this blank, or set it to `src/`, `pypackages/`, or whatever relative path you have to your project's source code. (Should be a directory with the same name as `project_name`.)
+* `packages_dir`: Leave this as `./` for project root, or set it to `src/`, `pypackages/`, or whatever is the relative path to the directory that should contain the `project_name` package.)
 
 To update to a new revision, run
 
