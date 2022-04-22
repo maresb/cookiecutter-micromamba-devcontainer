@@ -1,5 +1,5 @@
 {
-    "project_name": "the name from pyproject.toml",
+    "package_name": "the_name_of_your_python_package",
     "python_version": "3.10",
     "timezone": "Europe/Berlin",
     "packages_dir": ""
