@@ -22,7 +22,8 @@ dependencies:
   - pipx
   - condax
   - conda-lock
-  - ipykernel
+  - ipykernel  # Jupyter notebooks in VS Code
+  - nbformat  # Additional utilities for Jupyter notebooks (e.g. Plotly support)
   - line_profiler
   - cookiecutter
   - cruft
