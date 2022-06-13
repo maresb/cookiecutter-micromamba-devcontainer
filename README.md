@@ -9,7 +9,7 @@
 
 ## Setup
 
-The assumption is that you are developing a Python project, and managing the project-level dependencies with Poetry.
+The assumption is that you are developing a Python project, and managing the project-level dependencies with Poetry. You should have a `pyproject.toml` and a `poetry.lock` file in your project directory.
 
 Install Cruft, change to your project root (the directory inside of which you want to create `.devcontainer`) and run
 
@@ -21,16 +21,20 @@ cruft create https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer
 
 Then fill in the following variables:
 
-* `package_name`: The name of the package in your Python project, as specified as `name` in the `pyproject.toml`.
-* `python_version`: The Python version to install
-* `timezone`: The timezone to use
-* `packages_dir`: Leave this as `.` for project root, or set it to `src`, `pypackages`, or whatever is the directory that should contain the `package_name` package.)
+* `package_name`: The name of the main package of your project, as you would `import` it from Python.
+* `python_version`: The version of Python to use.
+* `timezone`: The [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to configure in the devcontainer.
+* `packages_dir`: The directory where `package_name` is located (often `src`), or `.` for the project root.
 
-To update to a new revision, run
+To update to a newer revision, run
 
 ```bash
 cd .devcontainer
 cruft update
 ```
 
-In case you get the error "Cruft cannot apply updates on an unclean git project", you can run `git stash` to temporarily stash your tracked files, and then run `git stash pop` to restore them after the update has finished. In case you have untracked files, you can run `cruft update --allow-untracked-files`.
+In case you get the error "Cruft cannot apply updates on an unclean git project", you can run `git stash` to temporarily stash your tracked files, and then run `git stash pop` to restore them after the update has finished. In case you have only untracked files, you can run `cruft update --allow-untracked-files`.
+
+## More information
+
+Please refer to [Micromamba Devcontainer](https://github.com/maresb/micromamba-devcontainer).
