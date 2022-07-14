@@ -35,9 +35,8 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER pyproject.toml poetry.lock ./
 
 # An __init__.py is also required for poetry to perform the initial install.
 RUN : \
-    && PACKAGE_DIR="{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}" \
-    && mkdir -p "${PACKAGE_DIR}" \
-    && touch "${PACKAGE_DIR}/__init__.py" \
+    && mkdir -p "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}" \
+    && touch "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/__init__.py" \
     ;
 
 # Install dependencies
