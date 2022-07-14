@@ -12,6 +12,7 @@ dependencies:
   - git  # Also installed from Ubuntu, but this is newer.
   - xonsh
   - poetry >=1.2.0a2
+  - poetry-core ==1.1.0a7  # The solver seems broken in the 1.1.0b# series.
   - pre-commit
   - black
   - isort
