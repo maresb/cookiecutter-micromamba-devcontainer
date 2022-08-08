@@ -4,7 +4,7 @@
 
 * [GitLab](https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer)
 * [GitHub](https://github.com/maresb/cookiecutter-micromamba-devcontainer)
-* [Micromamba Devcontainer](https://github.com/maresb/micromamba-devcontainer)
+* [Micromamba Devcontainer](https://github.com/mamba-org/micromamba-devcontainer)
 * [Cruft](https://github.com/cruft/cruft)
 
 ## Setup
