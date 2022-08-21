@@ -108,6 +108,10 @@
 		// Disable the "conda activate base" command when opening a new terminal
 		"python.terminal.activateEnvironment": false,
 
+		// Make sure that key combos like Ctrl+K are not intercepted by VS Code
+		// when using the terminal
+		"terminal.integrated.allowChords": false,
+
 		"terminal.integrated.inheritEnv": false,
 	},
 }
