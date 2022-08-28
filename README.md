@@ -14,7 +14,7 @@ The assumption is that you are developing a Python project, and managing the pro
 Install Cruft, change to your project root (the directory inside of which you want to create `.devcontainer`) and run
 
 ```bash
-cruft create https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer
+cruft create https://github.com/maresb/cookiecutter-micromamba-devcontainer
 ```
 
 (It's possible to replace `cruft create` with `cookiecutter` but then you won't be able to perform updates.)
