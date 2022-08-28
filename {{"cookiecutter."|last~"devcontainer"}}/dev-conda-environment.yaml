@@ -18,7 +18,6 @@ dependencies:
   - isort
   - flake8
   - pytest
-  - pytest-asyncio
   - mamba
   - pipx
   - condax
@@ -33,7 +32,6 @@ dependencies:
   - flake8-builtins
   - flake8-use-pathlib
   - flake8-noqa
-  - pip
 
   # # In case you want to install packages from PyPI which aren't on Conda-Forge,
   # # uncomment this block and add them as follows:
