@@ -1,4 +1,5 @@
 name: base
+category: dev
 channels:
   - conda-forge
 dependencies:
