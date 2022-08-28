@@ -37,7 +37,7 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER pyproject.toml ./
 # hadolint ignore=DL3021
 COPY --chown=$MAMBA_USER:$MAMBA_USER \
     "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/__init__.py" \
-    "./{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/"
+    "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/"
 
 # Install the package
 RUN pip install --no-cache-dir --editable .
