@@ -40,10 +40,20 @@ WORKDIR "${CONTAINER_WORKSPACE_FOLDER}"
 # Copy only the files necessary to install the project.
 # (Remember that we will bind-mount the full project folder after build time.)
 COPY --chown=$MAMBA_USER:$MAMBA_USER pyproject.toml ./
-# hadolint ignore=DL3021
+# Set the version number to zero to avoid cache busting dependency installation
+# when the version number changes.
+RUN : \
+    && mkdir --parents "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/" \
+    && echo '__version__ = "0.0.0"' > "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/__init__.py" \
+    ;
+
+# Install the package for the first time to add project-level dependencies
+RUN pip install --no-cache-dir --editable .
+
+# Copy the real __init__.py
 COPY --chown=$MAMBA_USER:$MAMBA_USER \
     "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/__init__.py" \
     "{{ cookiecutter.packages_dir }}/{{ cookiecutter.package_name }}/"
 
-# Install the package
+# Reinstall to fix the version number
 RUN pip install --no-cache-dir --editable .
