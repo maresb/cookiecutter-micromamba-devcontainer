@@ -26,6 +26,12 @@ RUN : \
 # <https://github.com/mamba-org/micromamba-docker#running-commands-in-dockerfile-within-the-conda-environment>
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 
+# Install Poetry and Hatch in isolated environments with condax.
+RUN : \
+  && condax install -c conda-forge/label/poetry_dev -c conda-forge/label/cleo_dev -c conda-forge "poetry==1.2.0rc2" \
+  && condax install hatch \
+;
+
 # Create and set the workspace folder
 ARG CONTAINER_WORKSPACE_FOLDER=/workspaces/default-workspace-folder
 RUN mkdir -p "${CONTAINER_WORKSPACE_FOLDER}"
