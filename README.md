@@ -22,7 +22,6 @@ cruft create https://github.com/maresb/cookiecutter-micromamba-devcontainer
 Then fill in the following variables:
 
 * `package_name`: The name of the main package of your project, as you would `import` it from Python.
-* `python_version`: The version of Python to use.
 * `timezone`: The [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to configure in the devcontainer.
 * `packages_dir`: The directory where `package_name` is located (often `src`), or `.` for the project root.
 
