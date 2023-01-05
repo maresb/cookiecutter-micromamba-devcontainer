@@ -14,11 +14,9 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER conda-lock.yml /tmp/conda-lock.yml
 RUN : \
     # Configure Conda to use the conda-forge channel
     && micromamba config append channels conda-forge \
-    # Micromamba will install only things from the "main" category, so
-    # we convert the "dev" category to "main"
-    && sed -i 's|- category: dev|- category: main|' /tmp/conda-lock.yml \
     # Install and clean up
-    && micromamba install --yes --name base --file /tmp/conda-lock.yml \
+    && micromamba install --yes --name base \
+        --category dev --category main --file /tmp/conda-lock.yml \
     && micromamba clean --all --yes \
 ;
 
