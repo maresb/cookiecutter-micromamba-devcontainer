@@ -24,7 +24,7 @@ RUN : \
 # <https://github.com/mamba-org/micromamba-docker#running-commands-in-dockerfile-within-the-conda-environment>
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 
-# Install Poetry and Hatch in isolated environments with condax.
+# Install Poetry and Hatch in isolated environments with pipx.
 RUN : \
   && pipx install poetry \
   && pipx install hatch \
