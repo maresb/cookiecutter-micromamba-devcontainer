@@ -1,0 +1,22 @@
+name: Update the example repository
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  updaterepos:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.RUN_ACTIONS_MARESB_PA_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'maresb',
+              repo: 'micromamba-devcontainer-example',
+              workflow_id: 'run-cruft-update.yml',
+              ref: 'main'
+            })
