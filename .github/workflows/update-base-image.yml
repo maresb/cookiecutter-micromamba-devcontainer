@@ -1,0 +1,32 @@
+name: "Update base image"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update_base_image:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@5c3ccc22eb2c950a0fa5bc7c47190d8e3f7e681a
+    - name: Get latest tag
+      id: latest_tag
+      run: |
+        curl -sSLf https://github.com/TomWright/dasel/releases/download/v2.0.2/dasel_linux_amd64 \
+            -L -o /tmp/dasel && chmod +x /tmp/dasel
+        token=$(curl https://ghcr.io/token\?scope\=repository:mamba-org/micromamba-devcontainer:pull \
+            | dasel -r json ".token" -w yaml)
+        tag=$(curl --header "Authorization: Bearer $token" \
+            https://ghcr.io/v2/mamba-org/micromamba-devcontainer/tags/list \
+            | dasel -r json '.tags.last()' -w yaml)
+        sed -i 's|^FROM ghcr\.io/mamba-org/micromamba-devcontainer\:.*$|FROM ghcr.io/mamba-org/micromamba-devcontainer:'$tag'|' \
+            '{{"cookiecutter."|last~"devcontainer"}}/dev.Dockerfile'
+        echo "tag=${tag}" >> $GITHUB_OUTPUT
+    - name: commit updated files
+      uses: peter-evans/create-pull-request@ee93d78b55ada32aa74b5e9957aac9c2523dd22c
+      with:
+        branch: "update-${{ steps.latest_tag.outputs.tag }}"
+        commit-message: "Update base image to ${{ steps.latest_tag.outputs.tag }}"
+        title: "Update base image to ${{ steps.latest_tag.outputs.tag }}"
+        delete-branch: true
+        reviewers: maresb
