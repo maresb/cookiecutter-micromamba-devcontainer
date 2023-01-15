@@ -2,6 +2,10 @@ name: "Update base image"
 
 on:
   workflow_dispatch:
+  # Running on push to branch allows the action to clean up merged branches.
+  push:
+    branches:
+      - main
 
 jobs:
   update_base_image:
