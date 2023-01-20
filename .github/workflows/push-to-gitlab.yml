@@ -8,11 +8,14 @@ on:
 
 
 jobs:
-  update_base_image:
+  push_to_gitlab:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout source
       uses: actions/checkout@5c3ccc22eb2c950a0fa5bc7c47190d8e3f7e681a
+      with:
+        # Get all branches and tags:
+        fetch-depth: 0
     - name: Push to GitLab
       env:
         project: bmares/cookiecutter-micromamba-devcontainer
