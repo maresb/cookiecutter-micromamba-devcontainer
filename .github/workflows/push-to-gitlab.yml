@@ -1,0 +1,22 @@
+name: "Push to GitLab"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+
+jobs:
+  update_base_image:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@5c3ccc22eb2c950a0fa5bc7c47190d8e3f7e681a
+    - name: Push to GitLab
+      env:
+        project: bmares/cookiecutter-micromamba-devcontainer
+        token: ${{ secrets.GITLAB_PROJECT_ACCESS_TOKEN }}
+      run: |
+        git remote set-url gitlab "https://root:${token}@gitlab.com/${project}"
+        git push --all gitlab
