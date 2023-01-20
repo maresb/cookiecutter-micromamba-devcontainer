@@ -18,5 +18,5 @@ jobs:
         project: bmares/cookiecutter-micromamba-devcontainer
         token: ${{ secrets.GITLAB_PROJECT_ACCESS_TOKEN }}
       run: |
-        git remote set-url gitlab "https://root:${token}@gitlab.com/${project}"
+        git remote add gitlab "https://root:${token}@gitlab.com/${project}"
         git push --all gitlab
