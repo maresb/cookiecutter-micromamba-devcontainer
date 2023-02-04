@@ -8,7 +8,7 @@
 
 ## Setup
 
-The assumption is that you are developing a Python project, and managing the project-level dependencies with Poetry. You should have a `pyproject.toml` and a `poetry.lock` file in your project directory.
+The assumption is that you are developing a Python project and managing the project-level Python dependencies with a modern standards-compliant packaging system like [Hatch](https://github.com/pypa/hatch) or [Flit](https://github.com/pypa/flit). Thus you should have a `pyproject.toml` file in your project directory.
 
 Install Cruft, change to your project root (the directory inside of which you want to create `.devcontainer`) and run
 
