@@ -3,6 +3,7 @@
 | | |
 | --- | --- |
 | This project | [![GitLab](https://img.shields.io/badge/GitLab-bmares/cookiecutter--micromamba--devcontainer-blue.svg?logo=gitlab)](https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer) [![GitHub](https://img.shields.io/badge/GitHub-maresb/cookiecutter--micromamba--devcontainer-blue.svg?logo=github)](https://github.com/maresb/cookiecutter-micromamba-devcontainer) |
+| Usage example | [![GitHub](https://img.shields.io/badge/GitHub-maresb/micromamba--devcontainer--example-blue.svg?logo=github)](https://github.com/maresb/micromamba-devcontainer-example) |
 | Base image | [![GitHub](https://img.shields.io/badge/GitHub-mamba--org/micromamba--devcontainer-blue.svg?logo=github)](https://github.com/mamba-org/micromamba-devcontainer) |
 | Template engine | [![GitHub](https://img.shields.io/badge/GitHub-cruft/cruft-blue.svg?logo=github)](https://github.com/cruft/cruft)
 
