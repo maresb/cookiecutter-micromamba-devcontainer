@@ -34,3 +34,4 @@ jobs:
         title: "Update base image to ${{ steps.latest_tag.outputs.tag }}"
         delete-branch: true
         reviewers: maresb
+        author: Ben Mares <services-git-throwaway1@tensorial.com>
