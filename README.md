@@ -1,11 +1,10 @@
 # Example Cookiecutter template for using micromamba-devcontainer
 
-## Links
-
-* [GitLab](https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer)
-* [GitHub](https://github.com/maresb/cookiecutter-micromamba-devcontainer)
-* [Micromamba Devcontainer](https://github.com/mamba-org/micromamba-devcontainer)
-* [Cruft](https://github.com/cruft/cruft)
+| | |
+| --- | --- |
+| This project | [![GitLab](https://img.shields.io/badge/GitLab-bmares/cookiecutter--micromamba--devcontainer-blue.svg?logo=gitlab)](https://gitlab.com/bmares/cookiecutter-micromamba-devcontainer) [![GitHub](https://img.shields.io/badge/GitHub-maresb/cookiecutter--micromamba--devcontainer-blue.svg?logo=github)](https://github.com/maresb/cookiecutter-micromamba-devcontainer) |
+| Base image | [![GitHub](https://img.shields.io/badge/GitHub-mamba--org/micromamba--devcontainer-blue.svg?logo=github)](https://github.com/mamba-org/micromamba-devcontainer) |
+| Template engine | [![GitHub](https://img.shields.io/badge/GitHub-cruft/cruft-blue.svg?logo=github)](https://github.com/cruft/cruft)
 
 ## Setup
 
