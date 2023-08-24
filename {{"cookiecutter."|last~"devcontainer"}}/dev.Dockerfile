@@ -5,9 +5,7 @@ ARG DOCKERFILE_UMASK=0000
 
 # Install hadolint for Dockerfile linting (unfortunately not yet available on conda-forge)
 # <https://github.com/conda-forge/staged-recipes/pull/14581>
-ADD https://github.com/hadolint/hadolint/releases/download/v2.10.0/hadolint-Linux-x86_64 /usr/local/bin/hadolint
-# hadolint ignore=DL3004
-RUN sudo chmod a+rx /usr/local/bin/hadolint
+ADD --chmod=755 https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 /usr/local/bin/hadolint
 
 # Install the Conda packages.
 COPY --chown=$MAMBA_USER:$MAMBA_USER conda-lock.yml /tmp/conda-lock.yml
