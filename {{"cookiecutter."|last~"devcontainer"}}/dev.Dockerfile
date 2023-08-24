@@ -13,12 +13,16 @@ ADD --chmod=755 https://raw.githubusercontent.com/jupyter/docker-stacks/a5b40a6f
 # Install the Conda packages.
 COPY --chown=$MAMBA_USER:$MAMBA_USER conda-lock.yml /tmp/conda-lock.yml
 RUN : \
+    # Create a fixed group for /opt/conda in case the user GID changes
+    && sudo groupadd --gid 46328 mamba-admin \
+    && sudo usermod -aG mamba-admin "${MAMBA_USER}" \
     # Configure Conda to use the conda-forge channel
     && micromamba config append channels conda-forge \
     # Install and clean up
     && micromamba install --yes --name base \
         --category dev --category main --file /tmp/conda-lock.yml \
     && micromamba clean --all --force-pkgs-dirs --yes \
+    && sudo -E "NB_GID=mamba-admin" fix-permissions "${MAMBA_ROOT_PREFIX}" \
 ;
 
 # Activate the conda environment for the Dockerfile.
