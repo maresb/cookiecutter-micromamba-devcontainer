@@ -18,7 +18,7 @@ RUN : \
     # Install and clean up
     && micromamba install --yes --name base \
         --category dev --category main --file /tmp/conda-lock.yml \
-    && micromamba clean --all --yes \
+    && micromamba clean --all --force-pkgs-dirs --yes \
 ;
 
 # Activate the conda environment for the Dockerfile.
