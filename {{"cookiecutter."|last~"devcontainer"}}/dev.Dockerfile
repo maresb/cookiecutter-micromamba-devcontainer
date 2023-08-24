@@ -7,6 +7,9 @@ ARG DOCKERFILE_UMASK=0000
 # <https://github.com/conda-forge/staged-recipes/pull/14581>
 ADD --chmod=755 https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 /usr/local/bin/hadolint
 
+# Install the fix-permissions script
+ADD --chmod=755 https://raw.githubusercontent.com/jupyter/docker-stacks/a5b40a6f1117bd675565b3673e063125dd74eac3/images/docker-stacks-foundation/fix-permissions /usr/local/bin/fix-permissions
+
 # Install the Conda packages.
 COPY --chown=$MAMBA_USER:$MAMBA_USER conda-lock.yml /tmp/conda-lock.yml
 RUN : \
