@@ -1,4 +1,4 @@
-name: "Push to GitLab"
+name: Push to GitLab
 
 on:
   workflow_dispatch:
