@@ -100,7 +100,7 @@
 				], // <https://github.com/microsoft/vscode-isort/issues/53#issuecomment-1310754796>
 
 				// Interpret lines beginning with "# !%" as ipython magic commands
-				"jupyter.magicCommandsAsComments": true,
+				"jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
 
 				// Path of the default Python environment
 				"python.pythonPath": "/opt/conda/bin/python",
