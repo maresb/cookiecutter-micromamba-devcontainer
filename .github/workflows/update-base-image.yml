@@ -1,11 +1,11 @@
-name: "Update base image"
+name: Update base image
 
 on:
   workflow_dispatch:
   # Running on push to branch allows the action to clean up merged branches.
   push:
     branches:
-      - main
+    - main
 
 jobs:
   update_base_image:
@@ -29,9 +29,9 @@ jobs:
     - name: commit updated files
       uses: peter-evans/create-pull-request@ee93d78b55ada32aa74b5e9957aac9c2523dd22c
       with:
-        branch: "update-${{ steps.latest_tag.outputs.tag }}"
-        commit-message: "Update base image to ${{ steps.latest_tag.outputs.tag }}"
-        title: "Update base image to ${{ steps.latest_tag.outputs.tag }}"
+        branch: update-${{ steps.latest_tag.outputs.tag }}
+        commit-message: Update base image to ${{ steps.latest_tag.outputs.tag }}
+        title: Update base image to ${{ steps.latest_tag.outputs.tag }}
         delete-branch: true
         reviewers: maresb
         author: Ben Mares <services-git-throwaway1@tensorial.com>
