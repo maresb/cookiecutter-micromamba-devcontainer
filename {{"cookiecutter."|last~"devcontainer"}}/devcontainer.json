@@ -44,9 +44,6 @@
 				"jnoortheen.xonsh",
 			],
 			"settings": {
-				// Disable telemetry
-				"telemetry.enableTelemetry": false,
-
 				// Files to completely exclude from view
 				// (see also search.exclude and files.watcherExclude)
 				"files.exclude": {
@@ -84,7 +81,6 @@
 				"jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
 
 				// Path of the default Python environment
-				"python.pythonPath": "/opt/conda/bin/python",
 				"python.defaultInterpreterPath": "/opt/conda/bin/python",
 
 				// Disable the "conda activate base" command when opening a new terminal
@@ -96,8 +92,6 @@
 				// Make sure that key combos like Ctrl+K are not intercepted by VS Code
 				// when using the terminal
 				"terminal.integrated.allowChords": false,
-
-				"terminal.integrated.inheritEnv": false,
 			},
 		}
 	},
