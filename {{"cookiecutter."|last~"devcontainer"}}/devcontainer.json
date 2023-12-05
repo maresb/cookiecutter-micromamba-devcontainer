@@ -57,7 +57,9 @@
 					".devcontainer/cache/*/[!\\.]*": true,
 				},
 
-				"python.editor.defaultFormatter": "charliermarsh.ruff",
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff",
+				},
 				"ruff.path": ["/opt/conda/bin/ruff"],
 				"ruff.interpreter": ["/opt/conda/bin/python"],
 
